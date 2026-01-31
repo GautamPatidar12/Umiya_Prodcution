@@ -6,14 +6,14 @@ const CATEGORIES = ["All", "Murti", "Clothes", "Bajot", "Rath", "Jewelry", "Othe
 
 // Product data with originalPrice for the "cut-price" effect
 const INITIAL_PRODUCTS = [
-  { id: 1, name: "Premium Isar-Gangaur Set", price: 12500, originalPrice: 15000, category: "Murti", image: "https://images.unsplash.com/photo-1610450949065-2f2268393664?auto=format&fit=crop&q=80&w=400", description: "Hand-carved wooden murtis with intricate gold work." },
-  { id: 2, name: "Silk Poshak (Red & Gold)", price: 1800, originalPrice: 2500, category: "Clothes", image: "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&q=80&w=400", description: "Traditional Rajasthani silk attire with gotta patti." },
-  { id: 3, name: "Hand-Painted Bajot", price: 2800, originalPrice: 3500, category: "Bajot", image: "https://images.unsplash.com/photo-1544031656-66afcefd9796?auto=format&fit=crop&q=80&w=400", description: "Sturdy wooden bajot with traditional floral motifs." },
-  { id: 4, name: "Royal Brass Rath", price: 6500, originalPrice: 8000, category: "Rath", image: "https://images.unsplash.com/photo-1596751303362-78394a9a050b?auto=format&fit=crop&q=80&w=400", description: "Miniature royal carriage for the Gangaur procession." },
-  { id: 5, name: "Pearl Jewelry Set", price: 950, originalPrice: 1200, category: "Jewelry", image: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&q=80&w=400", description: "Elegant ornaments including Nath and Bindi." },
-  { id: 6, name: "Clay Gangaur Pair", price: 3900, originalPrice: 4500, category: "Murti", image: "https://images.unsplash.com/photo-1566737236500-c8ac43014a67?auto=format&fit=crop&q=80&w=400", description: "Lightweight clay murtis for easy handling during festivals." },
-  { id: 7, name: "Designer Bajot (Large)", price: 4200, originalPrice: 5000, category: "Bajot", image: "https://images.unsplash.com/photo-1505330622279-bf7d7fc918f4?auto=format&fit=crop&q=80&w=400", description: "Exquisite carved bajot for major rituals." },
-  { id: 8, name: "Embroidered Dupatta", price: 550, originalPrice: 800, category: "Clothes", image: "https://images.unsplash.com/photo-1574634534894-89d7576c8259?auto=format&fit=crop&q=80&w=400", description: "Bright colored bandhani dupattas for Gangaur." },
+  { id: 1, name: "Blue-White", price: 7000, originalPrice: 8000, category: "Rath", image: "Blue-White.jpg", description: "Hand-carved wooden murtis with intricate gold work." },
+  { id: 2, name: "Red-Green", price: 6500, originalPrice: 7000, category: "Rath", image: "Red-Green.jpg", description: "Traditional Rajasthani silk attire with gotta patti." },
+  { id: 3, name: "Pure Blue", price: 13999, originalPrice: 15000, category: "Rath", image: "Pure-Blue.jpg", description: "Sturdy wooden bajot with traditional floral motifs." },
+  { id: 4, name: "Red-Yellow", price: 12999, originalPrice: 14000, category: "Rath", image: "Red-Yellow.jpg", description: "Miniature royal carriage for the Gangaur procession." },
+  { id: 5, name: "Dark-Red", price: 12999, originalPrice: 14000, category: "Rath", image: "Dark-Red.png", description: "Elegant ornaments including Nath and Bindi." },
+  { id: 6, name: "Orange-Set", price: 13999, originalPrice: 15000, category: "Rath", image: "Orange-Set.png", description: "Lightweight clay murtis for easy handling during festivals." },
+  { id: 7, name: "North-East", price: 14999, originalPrice: 17000, category: "Rath", image: "North-East.png", description: "Exquisite carved bajot for major rituals." },
+  { id: 8, name: "Adivasi", price: 12999, originalPrice: 14000, category: "Rath", image: "Adivasi.png", description: "Bright colored bandhani dupattas for Gangaur." },
 ];
 
 export default function App() {
@@ -66,15 +66,22 @@ export default function App() {
       <nav className="sticky top-0 z-40 w-full bg-white/80 backdrop-blur-md border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
           <div className="flex items-center space-x-2 shrink-0">
-            <div className="w-10 h-10 bg-orange-600 rounded-full flex items-center justify-center text-white font-bold text-xl">G</div>
-            <h1 className="text-xl font-bold tracking-tight text-orange-600 hidden sm:block">Gangaur Exhibition</h1>
+            {/*<div className="w-10 h-10 bg-orange-600 rounded-full flex items-center justify-center text-white font-bold text-xl">U</div>*/}
+            <div className="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center overflow-hidden">
+              <img
+                src="Profile.jpg"
+                alt="Profile"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <h1 className="text-xl font-bold tracking-tight text-orange-600 hidden sm:block">UMIYA PRODUCTION</h1>
           </div>
-          
+
           <div className="flex-1 max-w-md mx-4 relative">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 w-4 h-4" />
-            <input 
-              type="text" 
-              placeholder="Search items..." 
+            <input
+              type="text"
+              placeholder="Search items..."
               className="w-full pl-10 pr-4 py-2 bg-slate-100 border-none rounded-full text-sm focus:ring-2 focus:ring-orange-500 focus:bg-white transition-all outline-none"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
@@ -107,7 +114,7 @@ export default function App() {
             ))}
           </div>
         </div>
-        
+
         <div className="relative z-10 max-w-3xl mx-auto">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-orange-50 text-orange-700 rounded-full text-xs font-bold mb-6 border border-orange-100 shadow-sm">
             <Tag className="w-3.5 h-3.5" /> Special Festival Discounts Live!
@@ -123,11 +130,10 @@ export default function App() {
               <button
                 key={cat}
                 onClick={() => setSelectedCategory(cat)}
-                className={`px-6 py-2.5 rounded-full text-sm font-semibold transition-all shadow-sm ${
-                  selectedCategory === cat 
-                  ? "bg-orange-600 text-white shadow-orange-200" 
+                className={`px-6 py-2.5 rounded-full text-sm font-semibold transition-all shadow-sm ${selectedCategory === cat
+                  ? "bg-orange-600 text-white shadow-orange-200"
                   : "bg-white text-slate-600 hover:bg-slate-100 border border-slate-200"
-                }`}
+                  }`}
               >
                 {cat}
               </button>
@@ -140,7 +146,7 @@ export default function App() {
       <main className="max-w-7xl mx-auto px-4 py-12">
         <div className="flex items-center justify-between mb-10">
           <h3 className="text-2xl font-bold flex items-center gap-2 text-slate-800">
-            <Filter className="w-5 h-5 text-orange-600" /> 
+            <Filter className="w-5 h-5 text-orange-600" />
             {selectedCategory} Collection
             <span className="text-sm font-normal text-slate-400 ml-2">({filteredProducts.length} items)</span>
           </h3>
@@ -148,14 +154,14 @@ export default function App() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
           {filteredProducts.map(product => (
-            <div 
-              key={product.id} 
+            <div
+              key={product.id}
               className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 flex flex-col h-full"
             >
               <div className="relative aspect-[4/5] overflow-hidden">
-                <img 
-                  src={product.image} 
-                  alt={product.name} 
+                <img
+                  src={product.image}
+                  alt={product.name}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 cursor-pointer"
                   onClick={() => setSelectedProduct(product)}
                 />
@@ -169,7 +175,7 @@ export default function App() {
                     </div>
                   )}
                 </div>
-                <button 
+                <button
                   onClick={() => toggleFavorite(product.id)}
                   className="absolute top-3 right-3 p-2 bg-white/90 backdrop-blur rounded-full shadow-md hover:scale-110 transition-transform z-10"
                 >
@@ -190,7 +196,7 @@ export default function App() {
                     )}
                     <span className="text-xl font-black text-slate-900">₹{product.price.toLocaleString()}</span>
                   </div>
-                  <button 
+                  <button
                     onClick={() => handleWhatsAppOrder(product)}
                     className="bg-slate-900 text-white px-4 py-2.5 rounded-lg text-xs font-bold hover:bg-orange-600 transition-colors flex items-center gap-2 shadow-sm"
                   >
@@ -214,8 +220,14 @@ export default function App() {
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
           <div className="md:col-span-2">
             <div className="flex items-center space-x-3 mb-6 text-left">
-              <div className="w-10 h-10 bg-orange-600 rounded-lg flex items-center justify-center text-white font-bold text-xl">G</div>
-              <h5 className="text-2xl font-bold tracking-tight">Gangaur Business</h5>
+              <div className="w-10 h-10 bg-gray-200 rounded-lg flex items-center justify-center overflow-hidden">
+                <img
+                  src="Profile.jpg"
+                  alt="Profile"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <h5 className="text-2xl font-bold tracking-tight">UMIYA PRODUCTION</h5>
             </div>
             <p className="text-slate-400 leading-relaxed mb-8 max-w-md text-left">
               Dedicated to preserving the beauty and spiritual essence of Rajasthani culture through authentic handcrafted Isar-Gangaur Murtis and ritual accessories. Handcrafted in Jaipur, delivered to your doorstep.
@@ -242,12 +254,12 @@ export default function App() {
               <div className="flex items-start gap-3">
                 <Phone className="w-5 h-5 text-orange-600 mt-1" />
                 <div>
-                  <span className="font-bold text-white block">+91 98765 43210</span>
+                  <span className="font-bold text-white block">+91 6263466588,+91 6266757803</span>
                   <span className="text-xs text-slate-500">Available 9 AM - 8 PM</span>
                 </div>
               </div>
               <p className="text-sm text-slate-400 border-l-2 border-orange-600 pl-4">
-                Main Market, Opposite City Palace,<br /> Jaipur, Rajasthan, India
+                Dahiwar (in front of sai mandir),<br /> Dhamnod 454552, Dhar(MP)
               </p>
             </div>
           </div>
@@ -266,13 +278,13 @@ export default function App() {
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
           <div className="absolute inset-0 bg-slate-900/60 backdrop-blur-sm" onClick={() => setSelectedProduct(null)}></div>
           <div className="relative bg-white w-full max-w-4xl rounded-3xl overflow-hidden shadow-2xl animate-in fade-in zoom-in duration-300">
-            <button 
+            <button
               onClick={() => setSelectedProduct(null)}
               className="absolute top-4 right-4 p-2 bg-white/80 hover:bg-white rounded-full z-10 text-slate-900 shadow-md transition-colors"
             >
               <X className="w-6 h-6" />
             </button>
-            
+
             <div className="flex flex-col md:flex-row h-full max-h-[90vh]">
               <div className="md:w-1/2 h-64 md:h-auto overflow-hidden">
                 <img src={selectedProduct.image} className="w-full h-full object-cover" alt={selectedProduct.name} />
@@ -283,7 +295,7 @@ export default function App() {
                 <p className="text-slate-600 text-lg mb-8 leading-relaxed">
                   {selectedProduct.description} This exquisite piece is handcrafted by our master artisans, ensuring that every detail reflects the traditional aesthetic of Gangaur ritual.
                 </p>
-                
+
                 <div className="bg-slate-50 p-6 rounded-2xl mb-8 flex items-center justify-between">
                   <div>
                     <span className="text-slate-400 text-sm block mb-1 font-medium">Special Exhibition Price</span>
@@ -302,19 +314,18 @@ export default function App() {
                 </div>
 
                 <div className="grid grid-cols-2 gap-4">
-                  <button 
+                  <button
                     onClick={() => handleWhatsAppOrder(selectedProduct)}
                     className="col-span-2 bg-orange-600 text-white py-4 rounded-xl font-bold flex items-center justify-center gap-3 hover:bg-orange-700 transition-all shadow-lg shadow-orange-100"
                   >
                     <Phone className="w-5 h-5" /> Buy on WhatsApp
                   </button>
-                  <button 
+                  <button
                     onClick={() => toggleFavorite(selectedProduct.id)}
-                    className={`py-4 rounded-xl font-bold border transition-all ${
-                      favorites.includes(selectedProduct.id)
+                    className={`py-4 rounded-xl font-bold border transition-all ${favorites.includes(selectedProduct.id)
                       ? "bg-red-50 border-red-200 text-red-600"
                       : "bg-white border-slate-200 text-slate-600 hover:bg-slate-50"
-                    }`}
+                      }`}
                   >
                     {favorites.includes(selectedProduct.id) ? "Saved to Wishlist" : "Save for later"}
                   </button>
