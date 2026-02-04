@@ -2,23 +2,23 @@ import React, { useState, useMemo, useEffect } from 'react';
 import { ShoppingCart, Filter, Search, Phone, Instagram, ChevronRight, X, Heart, Tag } from 'lucide-react';
 
 // Categories for filtering
-const CATEGORIES = ["All", "Murti", "Clothes", "Bajot", "Rath", "Jewelry", "Other"];
+const CATEGORIES = ["All", "Murti", "Clothes", "Chowki (Sagwan and Babool)", "Rath", "Jwellery", "Other"];
 
 // Product data with originalPrice for the "cut-price" effect
 const INITIAL_PRODUCTS = [
-  { id: 1, name: "Blue-White", price: 7000, originalPrice: 8000, category: "Rath", image: "Blue-White.jpg", description: "Hand-carved wooden murtis with intricate gold work." },
-  { id: 2, name: "Red-Green", price: 6500, originalPrice: 7000, category: "Rath", image: "Red-Green.jpg", description: "Traditional Rajasthani silk attire with gotta patti." },
+  { id: 1, name: "Blue-White", price: 7000, originalPrice: 7500, category: "Rath", image: "Blue-White.jpg", description: "Hand-carved wooden murtis with intricate gold work." },
+  { id: 2, name: "Red-Green", price: 7500, originalPrice: 8000, category: "Rath", image: "Red-Green.jpg", description: "Traditional Rajasthani silk attire with gotta patti." },
   { id: 3, name: "Pure Blue", price: 13999, originalPrice: 15000, category: "Rath", image: "Pure-Blue.jpg", description: "Sturdy wooden bajot with traditional floral motifs." },
   { id: 4, name: "Red-Yellow", price: 12999, originalPrice: 14000, category: "Rath", image: "Red-Yellow.jpg", description: "Miniature royal carriage for the Gangaur procession." },
   { id: 5, name: "Dark-Red", price: 12999, originalPrice: 14000, category: "Rath", image: "Dark-Red.png", description: "Elegant ornaments including Nath and Bindi." },
   { id: 6, name: "Orange-Set", price: 13999, originalPrice: 15000, category: "Rath", image: "Orange-Set.png", description: "Lightweight clay murtis for easy handling during festivals." },
   { id: 7, name: "North-East", price: 14999, originalPrice: 17000, category: "Rath", image: "North-East.png", description: "Exquisite carved bajot for major rituals." },
   { id: 8, name: "Adivasi", price: 12999, originalPrice: 14000, category: "Rath", image: "Adivasi.png", description: "Bright colored bandhani dupattas for Gangaur." },
-  { id: 9, name: "Green-Red", price: 8000, originalPrice: 7500, category: "Rath", image: "Green-Red.png", description: "Bright colored bandhani dupattas for Gangaur." },
-  { id: 10, name: "Green-Yellow", price: 8000, originalPrice: 7500, category: "Rath", image: "Green-Yellow.png", description: "Bright colored bandhani dupattas for Gangaur." },
-  { id: 11, name: "Purple-White", price: 7500, originalPrice: 7000, category: "Rath", image: "Purple-White.png", description: "Bright colored bandhani dupattas for Gangaur." },
-  { id: 12, name: "RedWhite", price: 8000, originalPrice: 7500, category: "Rath", image: "RedWhite.png", description: "Bright colored bandhani dupattas for Gangaur." },
-  { id: 13, name: "Red-Yellow", price: 7500, originalPrice: 7000, category: "Rath", image: "Red-Yellow.png", description: "Bright colored bandhani dupattas for Gangaur." },
+  { id: 9, name: "Green-Red", price: 7500, originalPrice: 8000, category: "Rath", image: "Green-Red.png", description: "Bright colored bandhani dupattas for Gangaur." },
+  { id: 10, name: "Green-Yellow", price: 7500, originalPrice: 8000, category: "Rath", image: "Green-Yellow.png", description: "Bright colored bandhani dupattas for Gangaur." },
+  { id: 11, name: "Purple-White", price: 7000, originalPrice: 7500, category: "Rath", image: "Purple-White.png", description: "Bright colored bandhani dupattas for Gangaur." },
+  { id: 12, name: "RedWhite", price: 7500, originalPrice: 8000, category: "Rath", image: "RedWhite.png", description: "Bright colored bandhani dupattas for Gangaur." },
+  { id: 13, name: "Pink-Yellow", price: 7000, originalPrice: 7500, category: "Rath", image: "Pink-Yellow.png", description: "Bright colored bandhani dupattas for Gangaur." },
 ];
 
 export default function App() {
@@ -55,7 +55,7 @@ export default function App() {
 
   const handleWhatsAppOrder = (product) => {
     const discount = (product.originalPrice || product.price) - product.price;
-    const message = `Hello, I'm interested in: ${product.name}. I saw the discounted price of ₹${product.price} (Saved ₹${discount}). Is it available?`;
+    const message = `Hello, I'm interested in: ${product.name}, ProductID=${product.id}. I saw the discounted price of ₹${product.price} (Saved ₹${discount}). Is it available?`;
     window.open(`https://wa.me/916263466588?text=${encodeURIComponent(message)}`, '_blank');
   };
 
