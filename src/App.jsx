@@ -14,6 +14,11 @@ const INITIAL_PRODUCTS = [
   { id: 6, name: "Orange-Set", price: 13999, originalPrice: 15000, category: "Rath", image: "Orange-Set.png", description: "Lightweight clay murtis for easy handling during festivals." },
   { id: 7, name: "North-East", price: 14999, originalPrice: 17000, category: "Rath", image: "North-East.png", description: "Exquisite carved bajot for major rituals." },
   { id: 8, name: "Adivasi", price: 12999, originalPrice: 14000, category: "Rath", image: "Adivasi.png", description: "Bright colored bandhani dupattas for Gangaur." },
+  { id: 9, name: "Green-Red", price: 8000, originalPrice: 7500, category: "Rath", image: "Green-Red.png", description: "Bright colored bandhani dupattas for Gangaur." },
+  { id: 10, name: "Green-Yellow", price: 8000, originalPrice: 7500, category: "Rath", image: "Green-Yellow.png", description: "Bright colored bandhani dupattas for Gangaur." },
+  { id: 11, name: "Purple-White", price: 7500, originalPrice: 7000, category: "Rath", image: "Purple-White.png", description: "Bright colored bandhani dupattas for Gangaur." },
+  { id: 12, name: "RedWhite", price: 8000, originalPrice: 7500, category: "Rath", image: "RedWhite.png", description: "Bright colored bandhani dupattas for Gangaur." },
+  { id: 13, name: "Red-Yellow", price: 7500, originalPrice: 7000, category: "Rath", image: "Red-Yellow.png", description: "Bright colored bandhani dupattas for Gangaur." },
 ];
 
 export default function App() {
@@ -51,7 +56,7 @@ export default function App() {
   const handleWhatsAppOrder = (product) => {
     const discount = (product.originalPrice || product.price) - product.price;
     const message = `Hello, I'm interested in: ${product.name}. I saw the discounted price of ₹${product.price} (Saved ₹${discount}). Is it available?`;
-    window.open(`https://wa.me/91XXXXXXXXXX?text=${encodeURIComponent(message)}`, '_blank');
+    window.open(`https://wa.me/916263466588?text=${encodeURIComponent(message)}`, '_blank');
   };
 
   const getDiscountPercent = (current, original) => {
